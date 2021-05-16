@@ -18,10 +18,11 @@ Write code for Lab
 - Use maven and Jococo(in build section), FindBugs, PMD, CheckStyle plugins(reporting section)
 - Run mvn site and fix errors reported by checkstyle, pmd and findbugs
 ## To run:
-- git clone
-- mvn install
-- run target.zoo-0.0.1-SNAPSHOT.jar
-- mvn compile
-- mvn checkstyle:check
-- mvn findbugs:gui
-- mvn pmd:pmd
+- download project files 'git clone https://github.com/DanyloZhubryd/java_lab_8/pull/1'
+- switch to Lab8 branch'git checkout Lab8_Maven'
+- compile maven project 'mvn compile'
+- package compiled code into .jar 'mvn package'
+- run application: 'java -cp target\zoo-0.0.1-SNAPSHOT.jar ua.lviv.iot.zoo.App'
+- run checkstyle: 'mvn checkstyle:check'
+- check for bugs'mvn findbugs:gui'
+- check for dublications in code'mvn pmd:pmd'
