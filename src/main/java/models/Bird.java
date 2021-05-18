@@ -10,11 +10,10 @@ import lombok.NonNull;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @Data
 @ToString(callSuper = true)
 @FieldDefaults(makeFinal = false, level = AccessLevel.PROTECTED)
-@NoArgsConstructor
 
 public abstract class Bird extends Animal {
 	@NonNull String animalType;

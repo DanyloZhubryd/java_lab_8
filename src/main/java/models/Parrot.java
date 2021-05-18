@@ -12,7 +12,6 @@ import lombok.AccessLevel;
 @Data
 @ToString(callSuper = true)
 @FieldDefaults(makeFinal = false, level = AccessLevel.PRIVATE)
-@NoArgsConstructor
 
 public final class Parrot extends Bird{
 	public Parrot(final String species, final Integer massInKg, final Double feedPerDayInKg,

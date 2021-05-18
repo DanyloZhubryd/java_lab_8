@@ -12,7 +12,6 @@ import lombok.experimental.FieldDefaults;
 @Data
 @ToString(callSuper = true)
 @FieldDefaults(makeFinal = false, level = AccessLevel.PRIVATE)
-@NoArgsConstructor
 
 public final class Pelican extends Bird {
 	public Pelican(final String species, final Integer massInKg, final Double feedPerDayInKg,

@@ -10,6 +10,7 @@ import lombok.Singular;
 import lombok.ToString;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.LinkedList;
 import java.util.Comparator;
 
@@ -47,12 +48,10 @@ public final class BirdManager {
 
 	public List<Bird> searchByMigratory(final List<Bird> birds, 
 			final Boolean isSortByMass, final Boolean ascSort){
-		LinkedList<Bird> searchResults = new LinkedList<Bird>();
-		for (Bird i: birds) {
-			if (i.getIsMigratory()) {
-				searchResults.add(i);
-			}
-		}
+		LinkedList<Bird> searchResults = birds
+				.stream()
+				.filter((bird) ->bird.getIsMigratory() == true)
+				.collect(Collectors.toCollection(LinkedList::new));
 		if (isSortByMass) {
 			sortByMass(searchResults, ascSort);
 		}else {
