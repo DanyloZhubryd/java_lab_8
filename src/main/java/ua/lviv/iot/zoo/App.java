@@ -15,7 +15,7 @@ public class App {
     			.allBird(ze).allBird(amogus).allBird(aboba)
     			.build();
     	zoo.searchByMigratory(false, true).forEach(
-    			(bird) -> System.out.println(bird.getIsMigratory().toString() + " " 
+    			(bird) -> System.out.println(bird.isMigratory() + " " 
     										+ bird.getMassInKg() + " " 
     										+ bird.getFeedPerDayInKg()));
     }
