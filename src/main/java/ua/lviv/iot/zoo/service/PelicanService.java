@@ -21,26 +21,26 @@ public class PelicanService {
 	@Getter
 	private Map<Integer, Pelican> pelicansMap = new HashMap<Integer, Pelican>();
 	
-	public List<Pelican> getPelicans(){
+	public List<Pelican> getPelicans() {
         return pelicansMap.values().stream().collect(Collectors.toList());
     }
 	
-    public Pelican getPelican(Integer id){
+    public Pelican getPelican(final Integer id) {
     	return pelicansMap.get(id);
     }
 
-    public Pelican addPelican(Pelican pelican){
+    public Pelican addPelican(final Pelican pelican) {
         pelican.setId(id.incrementAndGet());
         pelicansMap.put(pelican.getId(), pelican);
         return pelican;
     }
 
-    public Pelican updatePelican(Integer id, Pelican pelican){
+    public Pelican updatePelican(final Integer id, final Pelican pelican) {
         pelican.setId(id);
         return pelicansMap.put(id, pelican);
     }
 
-    public Pelican deletePelican(Integer id){
+    public Pelican deletePelican(final Integer id) {
         return pelicansMap.remove(id);
     }
 }

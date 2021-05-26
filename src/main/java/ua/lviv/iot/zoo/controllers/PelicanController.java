@@ -21,13 +21,13 @@ import ua.lviv.iot.zoo.service.PelicanService;
 
 @RestController
 @RequestMapping(path = "/pelican")
-public class PelicanController {
+public final class PelicanController {
 	@Autowired
 	private PelicanService pelicanService;
-	
+
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<Pelican> getPelican(@PathVariable Integer id) {
-		if (pelicanService.getPelican(id) != null ) {
+		if (pelicanService.getPelican(id) != null) {
 			return new ResponseEntity<>(pelicanService.getPelican(id), HttpStatus.OK);
 		}
 		else {
@@ -36,19 +36,20 @@ public class PelicanController {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Pelican>> getPelicans(){
+	public ResponseEntity<List<Pelican>> getPelicans() {
 		return new ResponseEntity<>(pelicanService.getPelicans(), HttpStatus.OK);
 	}
 	
 	@PostMapping
-	public ResponseEntity<Pelican> createPelican(@RequestBody Pelican pelican) {
-		return new ResponseEntity<>(pelicanService.addPelican(pelican), HttpStatus.CREATED); 
+	public ResponseEntity<Pelican> createPelican(@RequestBody final Pelican pelican) {
+		return new ResponseEntity<>(pelicanService.addPelican(pelican), HttpStatus.CREATED);
 	}
 	
 	@PutMapping(path = "/{id}")
-	public ResponseEntity<Pelican> updatePelican(@PathVariable Integer id, @RequestBody Pelican pelican) {
+	public ResponseEntity<Pelican> updatePelican(@PathVariable final Integer id, 
+			@RequestBody final Pelican pelican) {
 		if (pelicanService.getPelicansMap().containsKey(id)) {
-		return new ResponseEntity<>(pelicanService.updatePelican(id, pelican), HttpStatus.OK);
+			return new ResponseEntity<>(pelicanService.updatePelican(id, pelican), HttpStatus.OK);
 		}
 		else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -56,9 +57,8 @@ public class PelicanController {
 	}
 	
 	@DeleteMapping(path = "/{id}")
-    public ResponseEntity<Pelican> deletePelican(@PathVariable Integer id){
+    public ResponseEntity<Pelican> deletePelican(@PathVariable Integer id) {
         if (pelicanService.getPelicansMap().containsKey(id)) {
-
             return new ResponseEntity<>(pelicanService.deletePelican(id), HttpStatus.OK);
         }
         else {

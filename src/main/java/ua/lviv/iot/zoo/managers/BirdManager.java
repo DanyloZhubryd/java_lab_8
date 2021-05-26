@@ -20,44 +20,47 @@ import java.util.Comparator;
 public final class BirdManager {
 	@Singular @NonNull private List<Bird> allBirds;
 
-	public List<Bird> sortByMass(final List<Bird> birds, final Boolean isReversed){
+	public List<Bird> sortByMass(final List<Bird> birds, final Boolean isReversed) {
 		if (isReversed){
 			birds.sort(Comparator.comparing(Bird::getMassInKg).reversed());
-		}else {
+		}
+		else {
 			birds.sort(Comparator.comparing(Bird::getMassInKg));
 		}
 		return birds;
 	}
-	public List<Bird> sortByMass(final Boolean isReversed){
+	public List<Bird> sortByMass(final Boolean isReversed) {
 		return sortByMass(this.allBirds, isReversed);
 	}
 
-	public List<Bird> sortByFeed(final List<Bird> birds, final Boolean isReversed){
+	public List<Bird> sortByFeed(final List<Bird> birds, final Boolean isReversed) {
 		if (isReversed){
 			birds.sort(Comparator.comparing(Bird::getFeedPerDayInKg).reversed());
-		}else {
+		}
+		else {
 			birds.sort(Comparator.comparing(Bird::getFeedPerDayInKg));
 		}
 		return birds;
 	}
-	public List<Bird> sortByFeed(final Boolean isReversed){
+	public List<Bird> sortByFeed(final Boolean isReversed) {
 		return sortByFeed(this.allBirds, isReversed);
 	}
 
 	public List<Bird> searchByMigratory(final List<Bird> birds, 
-			final Boolean isSortByMass, final Boolean ascSort){
+			final Boolean isSortByMass, final Boolean ascSort) {
 		List<Bird> searchResults = birds
 				.stream()
-				.filter((bird) ->bird.isMigratory())
+				.filter((bird) -> bird.isMigratory())
 				.collect(Collectors.toList());
 		if (isSortByMass) {
 			sortByMass(searchResults, ascSort);
-		}else {
+		}
+		else {
 			sortByFeed(searchResults, ascSort);
 		}
 		return searchResults;
 	}
-	public List<Bird> searchByMigratory(final Boolean isSortByMass, final Boolean ascSort){
+	public List<Bird> searchByMigratory(final Boolean isSortByMass, final Boolean ascSort) {
 		return searchByMigratory(this.allBirds, isSortByMass, ascSort);
 	}
 }
