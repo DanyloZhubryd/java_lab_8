@@ -1,6 +1,4 @@
-package managers;
-
-import models.Bird;
+package ua.lviv.iot.zoo.managers;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,6 +6,7 @@ import lombok.Data;
 import lombok.NonNull;
 import lombok.Singular;
 import lombok.ToString;
+import ua.lviv.iot.zoo.models.Bird;
 
 import java.util.List;
 import java.util.stream.Collectors;
