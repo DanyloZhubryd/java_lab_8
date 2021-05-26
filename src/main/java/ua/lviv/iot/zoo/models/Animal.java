@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 import ua.lviv.iot.zoo.enums.FeedType;
 
 @Data
@@ -15,9 +16,9 @@ import ua.lviv.iot.zoo.enums.FeedType;
 @FieldDefaults(makeFinal = false, level = AccessLevel.PROTECTED)
 
 public abstract class Animal {
-    @NonNull String species;
-    @NonNull Integer massInKg;
-    @NonNull Double feedPerDayInKg;
-    @NonNull FeedType feedType;
-    @NonNull Integer ageInYears;
+    String species;
+    Integer massInKg;
+    Double feedPerDayInKg;
+    FeedType feedType;
+    Integer ageInYears;
 }
