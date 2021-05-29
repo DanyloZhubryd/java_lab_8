@@ -1,18 +1,22 @@
 package ua.lviv.iot.zoo.models;
 
+import javax.persistence.MappedSuperclass;
+
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 import ua.lviv.iot.zoo.enums.FeedType;
 
+@MappedSuperclass
 @EqualsAndHashCode(callSuper = true)
 @Data
 @ToString(callSuper = true)
 @FieldDefaults(makeFinal = false, level = AccessLevel.PROTECTED)
-
+@NoArgsConstructor
 public abstract class Bird extends Animal {
 	String animalType;
 	boolean migratory;
