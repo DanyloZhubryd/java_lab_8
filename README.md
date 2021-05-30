@@ -16,4 +16,4 @@ Implement saving of one of the classes from 8-th lab in a table in a database us
 - Clone/download Lab_10 branch
 - `cd` into repo folder
 - Run `mvn install`
-- Run `java -jar target/ZooServiceLab10-1.0-SNAPSHOT.jar`
+- Run `java -jar target/zoo-1.0-SNAPSHOT.jar`
