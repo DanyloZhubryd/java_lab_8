@@ -1,6 +1,4 @@
-package models;
-
-import enums.FeedType;
+package ua.lviv.iot.zoo.models;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -8,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+import ua.lviv.iot.zoo.enums.FeedType;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -25,5 +24,16 @@ public abstract class Bird extends Animal {
         this.animalType = animalType;
         this.migratory = isMigratory;
         this.wingsSizeInCm = wingsSizeInCm;
+	}
+	
+	@Override
+	public String getHeaders() {
+		return super.getHeaders() + ",animalType,migratory,wingsSizeInCm";
+	}
+	
+	@Override
+	public String toCSV() {
+		return super.toCSV() + "," + animalType + 
+				"," + migratory + "," + wingsSizeInCm.toString();
 	}
 }

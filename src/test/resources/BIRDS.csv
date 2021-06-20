@@ -1,0 +1,8 @@
+Parrot
+species,massInKg,feedPerDayInKg,feedType,ageInYears,animalType,migratory,wingsSizeInCm
+giga,5,10.0,CORN,12,byte,true,15
+meme,6,15.0,VEGETABLES,17,generator,false,9
+Pelican
+species,massInKg,feedPerDayInKg,feedType,ageInYears,animalType,migratory,wingsSizeInCm
+boba,4,8.0,CORN,18,phett,false,15
+zero,3,7.0,MEAT,20,zerro,true,13

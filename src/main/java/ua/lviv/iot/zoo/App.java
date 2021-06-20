@@ -1,9 +1,9 @@
 package ua.lviv.iot.zoo;
 
-import enums.FeedType;
-import managers.BirdManager;
-import models.Parrot;
-import models.Pelican;
+import ua.lviv.iot.zoo.enums.FeedType;
+import ua.lviv.iot.zoo.managers.BirdManager;
+import ua.lviv.iot.zoo.models.Parrot;
+import ua.lviv.iot.zoo.models.Pelican;
 
 
 public class App {
