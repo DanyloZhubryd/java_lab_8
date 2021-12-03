@@ -6,7 +6,6 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.AccessLevel;
 
-import ua.lviv.iot.zoo.enums.FeedType;
 
 @EqualsAndHashCode(callSuper = false)
 @Data
@@ -14,11 +13,9 @@ import ua.lviv.iot.zoo.enums.FeedType;
 @FieldDefaults(makeFinal = false, level = AccessLevel.PRIVATE)
 
 public final class Parrot extends Bird{
-	public Parrot(final String species, final Integer massInKg, final Double feedPerDayInKg,
-			final FeedType feedType, final Integer ageInYears, final String animalType,
-			final Boolean isMigratory, final Integer wingsSizeInCm) {
-		super(species, massInKg, feedPerDayInKg, feedType, 
-			  ageInYears, animalType, isMigratory, wingsSizeInCm);
+	public Parrot(final String name, final Integer mass, final Integer age,
+				  final Integer price, final String animalType, final String image) {
+		super(name, mass, age, price, animalType, image);
 	}
 	public void talk(final String speech) {
 		System.out.printf("Parrot says:%s", speech);

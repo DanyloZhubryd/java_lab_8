@@ -30,8 +30,8 @@ public class PelicanService {
     		return repository.findById(id).get();
     	}
     	throw new NoSuchElementException(
-    			"NOT FOUND: Cannot find pelican with id: " + id +" in the system"
-    	);
+    			"NOT FOUND: Cannot find pelican with id: " + id +
+						" in the system");
     }
 
     public Pelican addPelican(final Pelican pelican) {
@@ -46,8 +46,7 @@ public class PelicanService {
     		return previousPelican;
     	}
     	throw new NoSuchElementException(
-                "NOT FOUND: Cannot find pelican with id:" + pelican.getId() + "in the system"
-        );
+                "NOT FOUND: Cannot find pelican with id:" + pelican.getId() + "in the system");
     }
 
     public Pelican deletePelican(final Integer id) {

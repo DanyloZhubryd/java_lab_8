@@ -14,9 +14,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
-import ua.lviv.iot.zoo.enums.FeedType;
-
-
 @EqualsAndHashCode(callSuper = true)
 @Data
 @ToString(callSuper = true)
@@ -27,11 +24,9 @@ import ua.lviv.iot.zoo.enums.FeedType;
 
 public final class Pelican extends Bird {
 	
-	public Pelican(final String species, final Integer massInKg, final Double feedPerDayInKg,
-			final FeedType feedType, final Integer ageInYears, final String animalType,
-			final Boolean isMigratory, final Integer wingsSizeInCm) {
-		super(species, massInKg, feedPerDayInKg, feedType, 
-			  ageInYears, animalType, isMigratory, wingsSizeInCm);
+	public Pelican(final String name, final Integer mass, final Integer age,
+				   final Integer price, final String animalType, final String image) {
+		super(name, mass, age, price, animalType, image);
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

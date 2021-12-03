@@ -24,6 +24,7 @@ bin/
 .settings/
 .project
 .classpath
+.idea/
 
 # Maven generated
 target/
